@@ -83,6 +83,34 @@ using FormComponent.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 51 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Index.razor"
+       
+
+    private bool showMain { get; set; }
+    private bool showPerson { get; set; }
+    private bool showBasic { get; set; }
+
+    private void ShowMain()
+    {
+        showMain = true;
+    }
+
+    private void ShowPersonal()
+    {
+        showPerson = true;
+    }
+
+    private void ShowBasic()
+    {
+        showBasic= true;
+        
+
+    }
+
+#line default
+#line hidden
+#nullable disable
     }
 }
 #pragma warning restore 1591
