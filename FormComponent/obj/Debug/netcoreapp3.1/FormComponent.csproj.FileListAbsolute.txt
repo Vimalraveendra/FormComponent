@@ -50,3 +50,7 @@
 /Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/FormComponent.csproj.CopyComplete
 /Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/Main.razor.g.cs
 /Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/Razor/Pages/Main.razor.g.cs
+/Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/BasicDetails.razor.g.cs
+/Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/RazorDeclaration/Pages/PersonalDetails.razor.g.cs
+/Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/Razor/Pages/BasicDetails.razor.g.cs
+/Users/vimalraveendran/Projects/FormComponent/FormComponent/obj/Debug/netcoreapp3.1/Razor/Pages/PersonalDetails.razor.g.cs
