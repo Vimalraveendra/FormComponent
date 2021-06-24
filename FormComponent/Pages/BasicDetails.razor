@@ -1,0 +1,89 @@
+﻿<fieldset>
+    <legend>Basic Details:</legend>
+    <div class="first">
+        <label for="fname">Address:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+    </div>
+    <div class="second">
+        <div class='name'>
+            <label for="lname">Imię1:</label><br>
+            <input type="text" id="lname" name="lname" value="Doe">
+        </div>
+
+        <div class='name'>
+            <label class="lname2" for="lname">Imię2:</label><br>
+            <input type="text" id="lname    " name="lname" value="Doe">
+        </div>
+
+    </div>
+    <div class="first">
+        <label for="ulica">Nazwisko Rodzica:</label><br>
+        <input type="text" id="fname" name="nazwisko" value="Select"><br>
+    </div>
+    <div class="first">
+        <label for="ulica">Ulica:</label><br>
+        <input type="text" id="fname" name="ulica" value="Select"><br>
+    </div>
+
+    <div class="gender-container">
+        <p>Gender:</p>
+        <div class='gender'>
+            <input type="radio" id="html" name="fav_language" value="HTML">
+            <label for="html">Male</label><br>
+        </div>
+        <input type="radio" id="css" name="fav_language" value="CSS">
+        <label for="css">Female</label><br>
+        <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+        <label for="javascript">Others</label><br><br>
+    </div>
+    <div class="gender-container">
+        <p>Preference:</p>
+        <div class='gender'>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <label for="vehicle1"> bike</label><br>
+        </div>
+        <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+        <label for="vehicle2"> car</label><br>
+        <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+        <label for="vehicle3"> boat</label><br><br>
+    </div>
+    <div class="list-container">
+        <p>Preference:</p>
+        <div class='list-details'>
+            <input list="browsers" name="browser" class="list">
+            <datalist id="browsers">
+                <option value="Internet Explorer"></option>
+                <option value="Firefox"></option>
+                <option value="Chrome"></option>
+                <option value="Opera"></option>
+                <option value="Safari"></option>
+            </datalist>
+        </div>
+    </div>
+
+    <div class="first">
+        <label for="cars">Choose a car:</label>
+        <select id="cars" name="cars" onmousedown="if(this.options.length>5){this.size=4;}" onchange='this.size=0;' onblur="this.size=0;">
+            <option value="brak" selected>---brak---</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+    </div>
+
+</fieldset>
+
+
+@code {
+
+}
