@@ -3,9 +3,72 @@
 <h1>Hello, world!</h1>
 
 <div class="content-wrapper">
+   
+        <main>
 
-    <Main></Main>
-    <PersonalDetails></PersonalDetails>
-    <BasicDetails></BasicDetails>
+            <section class="container">
+                <input type="button" value="Main Dane" class="main" @onclick="@ShowMain">
+                <input type="button" value="Personal Dane" class="personal" @onclick="@ShowPersonal">
+                <input type="button" value="Basic Dane" class="basic" @onclick="@ShowBasic">
+                @if (showPerson)
+                {
+                    showMain = false;
+                    <PersonalDetails></PersonalDetails>
+                    showMain = true;
+                    showPerson = false;
+                }
+                else if (showBasic)
+                {
+                    showMain = false;
+                    showPerson = false;
+
+                    <BasicDetails></BasicDetails>
+                    showMain = true;
+                    showPerson = true;
+                    showBasic = false;
+
+                }
+                else if (showMain)
+                {
+                    <Main></Main>
+                }
+                else
+                {
+                    <Main></Main>
+                }
+
+
+
+            </section>
+        </main>
+
+
+
 
 </div>
+
+
+@code {
+
+    private bool showMain { get; set; }
+    private bool showPerson { get; set; }
+    private bool showBasic { get; set; }
+
+    private void ShowMain()
+    {
+        showMain = true;
+    }
+
+    private void ShowPersonal()
+    {
+        showPerson = true;
+    }
+
+    private void ShowBasic()
+    {
+        showBasic= true;
+        
+
+    }
+}
+
