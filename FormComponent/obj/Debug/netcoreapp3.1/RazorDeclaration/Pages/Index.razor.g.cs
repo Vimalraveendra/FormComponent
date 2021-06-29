@@ -55,13 +55,6 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/_Imports.razor"
-using Microsoft.JSInterop;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 8 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/_Imports.razor"
 using FormComponent;
 
@@ -75,6 +68,13 @@ using FormComponent.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Index.razor"
+using Microsoft.JSInterop;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/")]
     public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -84,12 +84,20 @@ using FormComponent.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 51 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Index.razor"
+#line 67 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Index.razor"
        
 
     private bool showMain { get; set; }
     private bool showPerson { get; set; }
     private bool showBasic { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("loadScript");
+    }
+    }
 
     private void ShowMain()
     {
@@ -103,14 +111,15 @@ using FormComponent.Shared;
 
     private void ShowBasic()
     {
-        showBasic= true;
-        
+        showBasic = true;
+
 
     }
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
     }
 }
 #pragma warning restore 1591
