@@ -14,6 +14,26 @@ body {
     display: flex;
     justify-content: center;
 }
+h1 {
+    text-align: center;
+    background-color: black;
+    color: #fff;
+}
+
+
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 500px;
+}
+
+.list li {
+    background-color: rgb(177, 174, 174);
+    margin: 5px 0;
+    padding-left: 10px;
+}
 
 .container {
     /* width: 600px; */

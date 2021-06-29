@@ -1,9 +1,22 @@
-﻿@page "/"
+﻿@using Microsoft.JSInterop
+@inject IJSRuntime JS;  
 
-<h1>Hello, world!</h1>
+@page "/"
 
-<div class="content-wrapper">
-   
+<main>
+    <header>
+        <h1>List items</h1>
+    </header>
+    <section>
+        <ul class="list">
+        </ul>
+    </section>
+
+
+
+
+    <div class="content-wrapper">
+
         <main>
 
             <section class="container">
@@ -12,6 +25,7 @@
                 <input type="button" value="Basic Dane" class="basic" @onclick="@ShowBasic">
                 @if (showPerson)
                 {
+
                     showMain = false;
                     <PersonalDetails></PersonalDetails>
                     showMain = true;
@@ -20,11 +34,11 @@
                 else if (showBasic)
                 {
                     showMain = false;
-                    showPerson = false;
+                    @*showPerson = false;*@
 
                     <BasicDetails></BasicDetails>
                     showMain = true;
-                    showPerson = true;
+                    @*showPerson = true;*@
                     showBasic = false;
 
                 }
@@ -45,7 +59,9 @@
 
 
 
-</div>
+    </div>
+
+</main>
 
 
 @code {
@@ -53,6 +69,14 @@
     private bool showMain { get; set; }
     private bool showPerson { get; set; }
     private bool showBasic { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JS.InvokeVoidAsync("loadScript");
+    }
+    }
 
     private void ShowMain()
     {
@@ -66,8 +90,8 @@
 
     private void ShowBasic()
     {
-        showBasic= true;
-        
+        showBasic = true;
+
 
     }
 }
