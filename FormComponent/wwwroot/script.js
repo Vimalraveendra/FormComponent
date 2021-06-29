@@ -71,4 +71,11 @@ function loadUsers() {
     //        document.querySelector(".nazwisko").value = list.textContent;
     //    })
     //})
+
+
+    const rodzinaEl = document.querySelector('.rodzina')
+    const showEl = document.querySelector(".show")
+    showEl.addEventListener('click', function () {
+        rodzinaEl.style.display = "block";
+    })
 }
