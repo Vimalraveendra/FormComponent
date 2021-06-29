@@ -84,9 +84,10 @@ using Microsoft.JSInterop;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 67 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Index.razor"
+#line 70 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Index.razor"
        
 
+    private string Value;
     private bool showMain { get; set; }
     private bool showPerson { get; set; }
     private bool showBasic { get; set; }
@@ -96,7 +97,13 @@ using Microsoft.JSInterop;
         if (firstRender)
         {
             await JS.InvokeVoidAsync("loadScript");
+
+        }
     }
+    public async void HandleClick()
+    {
+        await JS.InvokeVoidAsync("setText");
+        StateHasChanged();
     }
 
     private void ShowMain()

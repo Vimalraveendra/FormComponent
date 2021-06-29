@@ -8,64 +8,68 @@
         <h1>List items</h1>
     </header>
     <section>
-        <ul class="list">
+        <ul class="list" @onclick="HandleClick">
         </ul>
     </section>
 
 
+    <div class="form-group">
+        
+        <label>Name:</label>
+        <input type="text" class="form-control" @bind="Value" />
+</div>
+        <div class="content-wrapper">
 
+            <main>
 
-    <div class="content-wrapper">
+                <section class="container">
+                    <input type="button" value="Main Dane" class="main" @onclick="@ShowMain">
+                    <input type="button" value="Personal Dane" class="personal" @onclick="@ShowPersonal">
+                    <input type="button" value="Basic Dane" class="basic" @onclick="@ShowBasic">
+                    @if (showPerson)
+                    {
 
-        <main>
+                        showMain = false;
+                        <PersonalDetails ></PersonalDetails>
+                        showMain = true;
+                        showPerson = false;
+                    }
+                    else if (showBasic)
+                    {
+                        showMain = false;
+                        @*showPerson = false;*@
 
-            <section class="container">
-                <input type="button" value="Main Dane" class="main" @onclick="@ShowMain">
-                <input type="button" value="Personal Dane" class="personal" @onclick="@ShowPersonal">
-                <input type="button" value="Basic Dane" class="basic" @onclick="@ShowBasic">
-                @if (showPerson)
-                {
+                        <BasicDetails></BasicDetails>
+                        showMain = true;
+                        @*showPerson = true;*@
+                        showBasic = false;
 
-                    showMain = false;
-                    <PersonalDetails></PersonalDetails>
-                    showMain = true;
-                    showPerson = false;
-                }
-                else if (showBasic)
-                {
-                    showMain = false;
-                    @*showPerson = false;*@
-
-                    <BasicDetails></BasicDetails>
-                    showMain = true;
-                    @*showPerson = true;*@
-                    showBasic = false;
-
-                }
-                else if (showMain)
-                {
-                    <Main></Main>
-                }
-                else
-                {
-                    <Main></Main>
-                }
-
-
-
-            </section>
-        </main>
-
+                    }
+                    else if (showMain)
+                    {
+                        <Main> </Main>
+                    }
+                    else
+                    {
+                        <Main></Main>
+                    }
 
 
 
-    </div>
+                </section>
+            </main>
+
+
+
+
+        </div>
 
 </main>
 
 
 @code {
 
+    private string Value;
     private bool showMain { get; set; }
     private bool showPerson { get; set; }
     private bool showBasic { get; set; }
@@ -75,7 +79,13 @@
         if (firstRender)
         {
             await JS.InvokeVoidAsync("loadScript");
+
+        }
     }
+    public async void HandleClick()
+    {
+        await JS.InvokeVoidAsync("setText");
+        StateHasChanged();
     }
 
     private void ShowMain()
