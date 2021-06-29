@@ -55,13 +55,6 @@ using Microsoft.AspNetCore.Components.Web;
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/_Imports.razor"
-using Microsoft.JSInterop;
-
-#line default
-#line hidden
-#nullable disable
-#nullable restore
 #line 8 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/_Imports.razor"
 using FormComponent;
 
@@ -75,6 +68,13 @@ using FormComponent.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 1 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Main.razor"
+using Microsoft.JSInterop;
+
+#line default
+#line hidden
+#nullable disable
     public partial class Main : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
@@ -82,6 +82,44 @@ using FormComponent.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 79 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Main.razor"
+                   
+    public string Value { get; set; }
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 81 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Main.razor"
+                   
+    public string Value1 { get; set; }
+    
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 83 "/Users/vimalraveendran/Projects/FormComponent/FormComponent/Pages/Main.razor"
+                   
+    public string Value2 { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            Value = await JS.InvokeAsync<string>("setText");
+            StateHasChanged();
+
+        }
+    }
+
+
+#line default
+#line hidden
+#nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JS { get; set; }
     }
 }
 #pragma warning restore 1591
