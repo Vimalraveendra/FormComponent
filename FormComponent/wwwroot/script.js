@@ -5,15 +5,11 @@ window.loadScript = window.loadScript ||
     }
 
 window.setText = () => {
-    let text = document.querySelector(".form-control").value = "Boss";
-    let text12 = document.querySelector(".nazwisko").value = "Boss";
-    let text1 = document.querySelector(".nazwisko1").value = "Boss1";
-    let text2 = document.querySelector(".nazwisko2").value = "Boss2";
-
+   console.log('hello')
+   
     
-
-
 }
+
 
 function loadUsers() {
     const userData = [
@@ -38,44 +34,79 @@ function loadUsers() {
         },
     ]
 
-  
+    const mainListEl = document.querySelector(".list")
+
+    //function addItem(item) {
+    //    let LI = $(`<li>${item.name}</li>`)
+    //   
+    //    return LI
+    //}
+
+    function changeInputValue(e) {
+        console.log(e.target)
+        document.querySelector(".form-control").value = e.target.textContent;
+        document.querySelector(".nazwisko").value = e.target.textContent;
+    }
 
     function addItem(item) {
-        let LI = $(`<li>${item.name}</li>`)
-        return LI
+        let Li = document.createElement('li')
+        let LiText = document.createTextNode(item.name)
+        Li.appendChild(LiText)
+        Li.addEventListener('click',changeInputValue)
+            
+        mainListEl.appendChild(Li)
     }
+
+    //function addList() {
+    //    //clearing the parent container before adding
+    //    $('.list').html('');
+    //    userData.forEach(item => {
+    //        $('.list').append(addItem(item))
+    //    })
+
+    //}
+
+  
+
 
     function addList() {
-        //clearing the parent container before adding
-        $('.list').html('');
+        mainListEl.innerHTML = "";
         userData.forEach(item => {
-            $('.list').append(addItem(item))
+            addItem(item)
         })
-
     }
-
 
 
     addList();
-    const mainListEl = document.querySelector(".list")
+  
     const contentWrapperEl = document.querySelector(".content-wrapper");
     mainListEl.addEventListener('click', function () {
         contentWrapperEl.classList.toggle('done')
-        document.querySelector(".nazwisko").value = "Boss";
+
     })
+
+    //function showInputCredential(e) {
+    //    document.querySelector(".form-control")value = e.target.textContent;
+    //    document.querySelector(".nazwisko").value = e.target.textContent;   
+   
+
+    //}
+
     //const listEl = document.querySelectorAll('.list li');
-    
+    //console.log("osit", listEl)
     //listEl.forEach(list => {
     //    list.addEventListener('click', function () {
-    //        contentWrapperEl.classList.toggle('done')
+    //        console.log('list', list)
+    //        document.querySelector(".form-control").list.textContent;
     //        document.querySelector(".nazwisko").value = list.textContent;
     //    })
-    //})
 
 
-    const rodzinaEl = document.querySelector('.rodzina')
-    const showEl = document.querySelector(".show")
-    showEl.addEventListener('click', function () {
-        rodzinaEl.style.display = "block";
-    })
-}
+        const rodzinaEl = document.querySelector('.rodzina')
+        const showEl = document.querySelector(".show")
+        showEl.addEventListener('click', function () {
+            rodzinaEl.style.display = "block";
+        })
+    }
+
+

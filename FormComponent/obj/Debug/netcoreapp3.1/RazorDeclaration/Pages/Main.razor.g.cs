@@ -105,16 +105,7 @@ using Microsoft.JSInterop;
                    
     public string Value2 { get; set; }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-        if (firstRender)
-        {
-            Value = await JS.InvokeAsync<string>("setText");
-            StateHasChanged();
-
-        }
-    }
-
+    
 
 #line default
 #line hidden

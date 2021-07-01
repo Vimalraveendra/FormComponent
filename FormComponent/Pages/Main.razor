@@ -12,15 +12,15 @@
             <div class="mixed">
                 <div class="last">
                     <label for="fname">Nazwisko:</label><br>
-                    <input type="text" id="fname" name="fname" value="@Value" class="nazwisko"><br>
+                    <input type="text" id="fname" name="fname" value="" class="nazwisko"><br>
                 </div>
                 <div class="last">
                     <label for="fname">Nazwisko:</label><br>
-                    <input type="text" id="fname" name="fname" value="@Value1" class="nazwisko1"><br>
+                    <input type="text" id="fname" name="fname" value="" class="nazwisko1"><br>
                 </div>
                 <div class="last">
                     <label for="fname">Nazwisko:</label><br>
-                    <input type="text" id="fname" name="fname" value="@Value2" class="nazwisko2"><br>
+                    <input type="text" id="fname" name="fname" value="" class="nazwisko2"><br>
                 </div>
                 <div class="last">
                     <label for="fname">Nazwisko:</label><br>
@@ -83,14 +83,14 @@
     @*[Parameter]*@
     public string Value2 { get; set; }
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    @*protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
         {
-            Value = await JS.InvokeAsync<string>("setText");
+             await JS.InvokeVoidAsync("setText");
             StateHasChanged();
 
         }
-    }
+    }*@
 
 }

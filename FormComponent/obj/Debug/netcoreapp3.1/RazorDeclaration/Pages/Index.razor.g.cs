@@ -100,15 +100,11 @@ using Microsoft.JSInterop;
 
         }
     }
-    public async void HandleClick()
-    {
-        await JS.InvokeVoidAsync("setText");
-        StateHasChanged();
-    }
 
-    private void ShowMain()
+    private async void ShowMain()
     {
         showMain = true;
+       
     }
 
     private void ShowPersonal()
@@ -122,6 +118,11 @@ using Microsoft.JSInterop;
 
 
     }
+
+
+
+    
+  
 
 #line default
 #line hidden
