@@ -8,7 +8,7 @@
         <h1>List items</h1>
     </header>
     <section>
-        <ul class="list" @onclick="HandleClick">
+        <ul class="list">
         </ul>
     </section>
 
@@ -82,15 +82,11 @@
 
         }
     }
-    public async void HandleClick()
-    {
-        await JS.InvokeVoidAsync("setText");
-        StateHasChanged();
-    }
 
-    private void ShowMain()
+    private async void ShowMain()
     {
         showMain = true;
+       
     }
 
     private void ShowPersonal()
@@ -104,5 +100,10 @@
 
 
     }
+
+
+
+    
+  
 }
 
